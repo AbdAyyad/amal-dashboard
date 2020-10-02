@@ -80,7 +80,7 @@ const Login: React.FC = () => {
     const loginHandler = (event: FormEvent) => {
         event.preventDefault();
         const data = new FormData(event.target as HTMLFormElement);
-        axios.post('http://localhost:8082/v1/api/login', {
+        axios.post('http://34.122.177.13:8082/v1/api/login', {
             email: data.get('email'),
             password: data.get('password'),
             phone_number: ''

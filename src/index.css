@@ -1,13 +1,21 @@
+@import url(//db.onlinewebfonts.com/c/23c8ec0d7b298e340b59bd32a7e661f3?family=SF+Compact+Display);
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@font-face {
+    font-family: "SFCompactDisplay";
+    src: url("//db.onlinewebfonts.com/t/23c8ec0d7b298e340b59bd32a7e661f3.eot");
+    src: url("//db.onlinewebfonts.com/t/23c8ec0d7b298e340b59bd32a7e661f3.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/23c8ec0d7b298e340b59bd32a7e661f3.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/23c8ec0d7b298e340b59bd32a7e661f3.woff") format("woff"), url("//db.onlinewebfonts.com/t/23c8ec0d7b298e340b59bd32a7e661f3.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/23c8ec0d7b298e340b59bd32a7e661f3.svg#SF Compact Display") format("svg");
 }

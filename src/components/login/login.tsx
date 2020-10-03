@@ -19,9 +19,7 @@ const useStyles = makeStyles({
         minHeight: '100%',
     }, container: {
         fontFamily: 'SFCompactDisplay',
-        backgroundColor: '#F0F3F8',
         borderRadius: '14px',
-        boxShadow: '0 31px 43px 0 rgba(52, 61, 160, 0.16)',
     }, button: {
         backgroundColor: '#3A5673',
         color: '#FFFFFF',
@@ -38,7 +36,6 @@ const useStyles = makeStyles({
         backgroundColor: 'rgba(0, 0, 0, 0)',
         border: ' 1px solid #6D7278',
         height: '52px',
-        // width: '100%',
         minWidth: '499px',
         marginTop: 'auto',
         marginBottom: '34px'
@@ -68,11 +65,13 @@ const useStyles = makeStyles({
     }, height100: {
         minHeight: '100%',
         maxHeight: '100%',
-        height: '100%',
+        height: '100%'
     }, height40: {
         minHeight: '40%',
         maxHeight: '40%',
         height: '40%',
+    }, background:{
+        backgroundColor: '#F0F3F8'
     }
 });
 
@@ -120,47 +119,42 @@ const Login: React.FC = () => {
     const errorMessage = state.error ? <p className={classes.error}> username/password doesn't match</p> : null;
     return (
         <Container fluid={true} className={classNames(classes.height100)}>
-            <Row className={classes.height100}>
-                <Col md={{span: 12}} className={classes.height100}>
-                    <div className={classNames(classes.container, classes.height100)}>
-                        <Row className={classNames(classes.height40, classes.mask)}>
-                            <Col md={{span: 12}}>
-                                <div>
-                                    <p className={classes.amal}>AMAL</p>
-                                </div>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col md={{span: 4}}/>
-                            <Col md={{span: 4}}>
-                                <form onSubmit={loginHandler}>
-                                    <Row>
-                                        <Col md={12}>
-                                            <h5 className={classes.loginBanner}>LOGIN</h5>
-                                            <p className={classes.label}>Username</p>
-                                            <input type={'email'} name={'email'} id='email' className={classes.input}/>
-                                            <p className={classes.label}>Password</p>
-                                            <input type={'password'} name={'password'} id='password'
-                                                   className={classes.input}/>
-                                            <br/>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col md={2}/>
-                                        <Col className={classes.middle} md={8}>
-                                            <button className={classes.button} type={'submit'}>LOGIN</button>
-                                        </Col>
-                                        <Col md={2}/>
-                                    </Row>
+            <div className={classNames(classes.container, classes.height100)}>
+                <Row className={classNames(classes.height40, classes.mask)}>
+                    <Col md={{span: 12}} className={classes.height100}>
+                        <p className={classNames(classes.amal)}>AMAL</p>
+                    </Col>
+                </Row>
+                <Row className={classes.background}>
+                    <Col md={{span: 4}}/>
+                    <Col md={{span: 4}}>
+                        <form onSubmit={loginHandler}>
+                            <Row>
+                                <Col md={12}>
+                                    <h5 className={classes.loginBanner}>LOGIN</h5>
+                                    <p className={classes.label}>Username</p>
+                                    <input type={'email'} name={'email'} id='email' className={classes.input}/>
+                                    <p className={classes.label}>Password</p>
+                                    <input type={'password'} name={'password'} id='password'
+                                           className={classes.input}/>
                                     <br/>
-                                    {errorMessage}
-                                </form>
-                            </Col>
-                            <Col md={{span: 4}}/>
-                        </Row>
-                    </div>
-                </Col>
-            </Row>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col md={2}/>
+                                <Col className={classes.middle} md={8}>
+                                    <button className={classes.button} type={'submit'}>LOGIN</button>
+                                </Col>
+                                <Col md={2}/>
+                            </Row>
+                            <br/>
+                            {errorMessage}
+                        </form>
+                    </Col>
+                    <Col md={{span: 4}}/>
+                </Row>
+            </div>
+
         </Container>
     );
 };

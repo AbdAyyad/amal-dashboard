@@ -21,6 +21,8 @@ const useStyles = makeStyles({
         backgroundColor: '#F0F3F8',
         borderRadius: '14px',
         boxShadow: '0 31px 43px 0 rgba(52, 61, 160, 0.16)',
+        width: '100%',
+        padding: 0
     }, button: {
         backgroundColor: '#3A5673',
         color: '#FFFFFF',
@@ -30,15 +32,15 @@ const useStyles = makeStyles({
         lineHeight: '28.64px',
         height: '50px',
         width: '100%',
-        marginTop: '50px',
-        marginBottom: '15px',
+        marginTop: '20px',
+        marginBottom: '27px',
         textAlign: 'center'
     }, input: {
         backgroundColor: 'rgba(0, 0, 0, 0)',
         border: ' 1px solid #6D7278',
         height: '30px',
         width: '100%',
-        marginTop: '10px',
+        marginTop: 'auto',
         marginBottom: '10px'
     }, form: {}, loginBanner: {
         color: '#51516B',
@@ -61,7 +63,7 @@ const useStyles = makeStyles({
         textAlign: 'center',
         fontSize: '24px'
     }, topMargin: {
-        marginTop: '5%'
+        marginTop: '7%'
     }, middle: {
         marginRight: 'auto',
         marginLeft: 'auto'
@@ -113,8 +115,7 @@ const Login: React.FC = () => {
     return (
         <Container fluid={true} className={classes.topMargin}>
             <Row>
-                <Col md={{span: 2}}/>
-                <Col md={{span: 8}}>
+                <Col md={{span: 12}}>
                     <div className={classes.container}>
                         <Row>
                             <Col md={{span: 12}}>
@@ -153,7 +154,6 @@ const Login: React.FC = () => {
                         </Row>
                     </div>
                 </Col>
-                <Col md={{span: 2}}/>
             </Row>
         </Container>
     );

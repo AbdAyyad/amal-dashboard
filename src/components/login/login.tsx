@@ -15,7 +15,8 @@ const useStyles = makeStyles({
         backgroundImage: 'linear-gradient(180deg, #3A5673 0%, #51B9CD 100%)',
         borderRadius: '14px 0 0 14px',
         boxShadow: '0 2px 5px 0 rgba(83, 97, 255, 0.05)',
-        height: '200px'
+        minHeight: '270px',
+        height: '30%'
     }, container: {
         fontFamily: 'SFCompactDisplay',
         backgroundColor: '#F0F3F8',
@@ -32,30 +33,35 @@ const useStyles = makeStyles({
         lineHeight: '28.64px',
         height: '50px',
         width: '100%',
-        marginTop: '20px',
+        marginTop: '51px',
         marginBottom: '27px',
-        textAlign: 'center'
+        textAlign: 'center',
+        minWidth: '344px'
     }, input: {
         backgroundColor: 'rgba(0, 0, 0, 0)',
         border: ' 1px solid #6D7278',
-        height: '30px',
+        height: '52px',
         width: '100%',
+        minWidth: '499px',
         marginTop: 'auto',
-        marginBottom: '10px'
-    }, form: {}, loginBanner: {
+        marginBottom: '34px'
+    }, form: {
+        minHeight: '738px',
+        height:'70%'
+    }, loginBanner: {
         color: '#51516B',
         fontSize: '36px',
         letterSpacing: '-0.22px',
         lineHeight: '42.96px',
-        marginBottom: '0',
-        marginTop: '15px',
+        marginTop: '37px',
+        marginBottom: '31px',
         textAlign: 'left'
     }, label: {
         color: '#51516B',
         fontSize: '24px',
         letterSpacing: '-0.15px',
         lineHeight: '28.64px',
-        marginBottom: '1px',
+        marginBottom: '12px',
         textAlign: 'left'
     }, error: {
         color: 'red',
@@ -63,7 +69,7 @@ const useStyles = makeStyles({
         textAlign: 'center',
         fontSize: '24px'
     }, topMargin: {
-        marginTop: '7%'
+        backgroundColor: '#F0F3F8'
     }, middle: {
         marginRight: 'auto',
         marginLeft: 'auto'
@@ -86,7 +92,7 @@ const Login: React.FC = () => {
     const loginHandler = (event: FormEvent) => {
         event.preventDefault();
         const data = new FormData(event.target as HTMLFormElement);
-        axios.post('http://34.122.177.13:8082/v1/api/login', {
+        axios.post('http://35.232.250.18:8082/v1/api/login', {
             email: data.get('email'),
             password: data.get('password'),
             phone_number: ''

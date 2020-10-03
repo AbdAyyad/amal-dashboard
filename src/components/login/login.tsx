@@ -2,37 +2,34 @@ import React, {FormEvent, useState} from "react";
 import {makeStyles} from '@material-ui/core/styles';
 import axios, {AxiosResponse} from 'axios';
 import {Col, Container, Row} from "react-bootstrap";
+import classNames from "classnames";
 
 const useStyles = makeStyles({
     amal: {
         color: '#FFFFFF',
-        fontSize: '100px',
+        fontSize: '100pt',
         lineHeight: '119px',
         textAlign: 'center',
-        paddingTop: '40px'
+        paddingTop: '7%'
     },
     mask: {
         backgroundImage: 'linear-gradient(180deg, #3A5673 0%, #51B9CD 100%)',
         borderRadius: '14px 0 0 14px',
         boxShadow: '0 2px 5px 0 rgba(83, 97, 255, 0.05)',
-        minHeight: '270px',
-        height: '30%'
+        minHeight: '100%',
     }, container: {
         fontFamily: 'SFCompactDisplay',
         backgroundColor: '#F0F3F8',
         borderRadius: '14px',
         boxShadow: '0 31px 43px 0 rgba(52, 61, 160, 0.16)',
-        width: '100%',
-        padding: 0
     }, button: {
         backgroundColor: '#3A5673',
         color: '#FFFFFF',
         borderRadius: '8px',
-        fontSize: '24px',
+        fontSize: '24pt',
         letterSpacing: '-0.15px',
         lineHeight: '28.64px',
         height: '50px',
-        width: '100%',
         marginTop: '51px',
         marginBottom: '27px',
         textAlign: 'center',
@@ -41,16 +38,13 @@ const useStyles = makeStyles({
         backgroundColor: 'rgba(0, 0, 0, 0)',
         border: ' 1px solid #6D7278',
         height: '52px',
-        width: '100%',
+        // width: '100%',
         minWidth: '499px',
         marginTop: 'auto',
         marginBottom: '34px'
-    }, form: {
-        minHeight: '738px',
-        height:'70%'
     }, loginBanner: {
         color: '#51516B',
-        fontSize: '36px',
+        fontSize: '36pt',
         letterSpacing: '-0.22px',
         lineHeight: '42.96px',
         marginTop: '37px',
@@ -58,7 +52,7 @@ const useStyles = makeStyles({
         textAlign: 'left'
     }, label: {
         color: '#51516B',
-        fontSize: '24px',
+        fontSize: '24pt',
         letterSpacing: '-0.15px',
         lineHeight: '28.64px',
         marginBottom: '12px',
@@ -67,12 +61,18 @@ const useStyles = makeStyles({
         color: 'red',
         marginTop: '15px',
         textAlign: 'center',
-        fontSize: '24px'
-    }, topMargin: {
-        backgroundColor: '#F0F3F8'
+        fontSize: '24pt'
     }, middle: {
         marginRight: 'auto',
         marginLeft: 'auto'
+    }, height100: {
+        minHeight: '100%',
+        maxHeight: '100%',
+        height: '100%',
+    }, height40: {
+        minHeight: '40%',
+        maxHeight: '40%',
+        height: '40%',
     }
 });
 
@@ -119,13 +119,13 @@ const Login: React.FC = () => {
     const classes = useStyles();
     const errorMessage = state.error ? <p className={classes.error}> username/password doesn't match</p> : null;
     return (
-        <Container fluid={true} className={classes.topMargin}>
-            <Row>
-                <Col md={{span: 12}}>
-                    <div className={classes.container}>
-                        <Row>
+        <Container fluid={true} className={classNames(classes.height100)}>
+            <Row className={classes.height100}>
+                <Col md={{span: 12}} className={classes.height100}>
+                    <div className={classNames(classes.container, classes.height100)}>
+                        <Row className={classNames(classes.height40, classes.mask)}>
                             <Col md={{span: 12}}>
-                                <div className={classes.mask}>
+                                <div>
                                     <p className={classes.amal}>AMAL</p>
                                 </div>
                             </Col>
@@ -133,7 +133,7 @@ const Login: React.FC = () => {
                         <Row>
                             <Col md={{span: 4}}/>
                             <Col md={{span: 4}}>
-                                <form className={classes.form} onSubmit={loginHandler}>
+                                <form onSubmit={loginHandler}>
                                     <Row>
                                         <Col md={12}>
                                             <h5 className={classes.loginBanner}>LOGIN</h5>

@@ -1,14 +1,17 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {Col, Container, Row} from "react-bootstrap";
-import AdminNavBar from "../navbar/admin-navbar";
+import AdminNavBar from "../../components/navbar/admin-navbar";
+import Header from "../../components/header/header";
 
 const styles = makeStyles({
     nav: {
         minHeight: '100%',
         color: '#FFFFFF'
-    }, paddingZero: {
-        // padding: 0
+    }, height100: {
+        minHeight: '100%',
+        height: '100%',
+        maxHeight: '100%'
     }, blueBackground: {
         backgroundImage: 'linear-gradient(180deg, #3A5673 0%, #51B9CD 100%)',
     }, amalLabel: {
@@ -23,13 +26,13 @@ const styles = makeStyles({
 const Dashboard: React.FC = () => {
     const classes = styles();
     return (
-        <Container fluid={true} className={classes.paddingZero}>
-            <Row>
-                <Col md={3}>
+        <Container fluid={true} className={classes.height100}>
+            <Row className={classes.height100}>
+                <Col md={3} className={classes.height100}>
                     <AdminNavBar/>
                 </Col>
                 <Col md={9}>
-                    <h1>content</h1>
+                    <Header type={'admin'} name={'em ali'}/>
                 </Col>
             </Row>
         </Container>

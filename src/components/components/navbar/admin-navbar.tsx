@@ -11,10 +11,12 @@ const styles = makeStyles({
         backgroundImage: 'linear-gradient(180deg, #3A5673 0%, #51B9CD 100%)',
     }, amalLabel: {
         fontSize: '16pt',
-        marginTop: '15%'
+        marginTop: '27%',
+        paddingBottom: '9%'
     }, activeStyle: {
         fontSize: '13pt',
-        lineHeight: '24px'
+        lineHeight: '24px',
+        fontWeight: 'bold'
     }, linkStyle: {
         textDecoration: 'none',
         color: '#FFFFFF',
@@ -25,10 +27,13 @@ const styles = makeStyles({
     }, ul: {
         listStyleType: 'none'
     }, li: {
-        marginTop: '40px',
-        marginBottom: '40px'
+        marginTop: '9%'
     }, logOff: {
-        marginTop: '350px',
+        marginTop: '85.5%',
+    }, height100: {
+        minHeight: '100%',
+        height: '100%',
+        maxHeight: '100%'
     }
 });
 
@@ -37,7 +42,7 @@ const AdminNavBar = () => {
     const classes = styles();
 
     return (
-        <Row className={classes.blueBackground}>
+        <Row className={classNames(classes.blueBackground, classes.height100)}>
             <Col md={1}/>
             <Col md={10}>
                 <nav className={classes.nav}>

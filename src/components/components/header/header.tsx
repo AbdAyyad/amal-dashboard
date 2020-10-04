@@ -6,19 +6,23 @@ import classNames from "classnames";
 
 interface HeaderProps {
     type: string;
-    name: string;
+    image: string;
     classes: {
-        input: string;
         textColor: string;
         whiteBackground: string;
         borderNone: string;
         font: string;
+        border: string;
+        fontSize16: string;
+        userType: string;
+        img: string;
+        height100: string;
     }
 }
 
 const styles = () => ({
-    input: {
-        height: '100%'
+    height100: {
+        minHeight: '100%'
     }, textColor: {
         color: '#9EA5BD'
     }, whiteBackground: {
@@ -34,6 +38,20 @@ const styles = () => ({
         }
     }, font: {
         fontFamily: 'SFCompactDisplay'
+    }, border: {
+        borderLeft: '1px solid #DDE1EE',
+        borderRight: '1px solid #DDE1EE'
+    }, fontSize16: {
+        fontSize: '16pt'
+    }, userType: {
+        paddingTop: '6%',
+        paddingLeft: '6%',
+        marginTop: '4%'
+    }, img: {
+        height: '80%',
+        width: '80%',
+        paddingTop: '15%',
+        paddingLeft: '20%'
     }
 });
 
@@ -42,16 +60,16 @@ class Header extends Component<HeaderProps> {
     render() {
         const {classes} = this.props;
         return (
-            <Row className={classNames(classes.whiteBackground, classes.font)}>
-                <Col md={8} className={classes.input}>
-                    <Form.Control className={classNames(classes.textColor, classes.borderNone)}
+            <Row className={classNames(classes.whiteBackground, classes.font, classes.height100)}>
+                <Col md={8} className={classNames(classes.height100)}>
+                    <Form.Control className={classNames(classes.textColor, classes.borderNone,classes.height100)}
                                   placeholder='Type in to search'/>
                 </Col>
-                <Col md={3}>
-                    <h3 className={classNames(classes.textColor)}>{this.props.type}</h3>
+                <Col md={3} className={classes.border}>
+                    <h3 className={classNames(classes.textColor, classes.fontSize16, classes.userType)}>{this.props.type}</h3>
                 </Col>
                 <Col md={1}>
-                    <p>{this.props.name}</p>
+                    <img src={this.props.image} alt={'admin icon'} className={classes.img}/>
                 </Col>
             </Row>
         );
